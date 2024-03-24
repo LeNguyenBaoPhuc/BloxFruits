@@ -84,7 +84,7 @@ local function IFIGMQ_fake_script()
 			repeat
 				task.wait()
 				local leviathan = seaFolder:FindFirstChild("Leviathan") 
-				if leviathan and (leviathan.Hitbox13.Position - lp.Character.HumanoidRootPart.Position).Magnitude <= 100000 then
+				if leviathan and (leviathan.Hitbox13.Position - lp.Character.HumanoidRootPart.Position).Magnitude <= 100000 and leviathan.Hitbox13.Position.Y >= 50 then
 					circular(leviathan.Hitbox13.CFrame)
 				end
 			until parent.Text ~= "On"
