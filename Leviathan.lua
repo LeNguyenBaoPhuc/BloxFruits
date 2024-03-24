@@ -84,7 +84,7 @@ local function IFIGMQ_fake_script()
 			repeat
 				task.wait()
 				local leviathan = seaFolder:FindFirstChild("Leviathan") 
-				if leviathan and (leviathan.Hitbox13.Position - lp.Character.HumanoidRootPart.Position).Magnitude <= 100000 and leviathan.Hitbox13.Position.Y >= 50 then
+				if leviathan and (leviathan.Hitbox13.Position - lp.Character.HumanoidRootPart.Position).Magnitude <= 100000 then
 					circular(leviathan.Hitbox13.CFrame)
 				end
 			until parent.Text ~= "On"
@@ -101,15 +101,3 @@ local function IFIGMQ_fake_script()
 end
 
 coroutine.wrap(IFIGMQ_fake_script)()
-
-local Part = Instance.new("Part", game:GetService("Workspace"))
-Part.Transparency = 1
-Part.Anchored = true
-Part.CanCollide = true
-Part.Size = Vector3.new(2500, 100, 2500)
-
-spawn(function()
-	while wait() do
-        Part.Position = Vector3.new(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.X, -((Part.Size.Y / 2) + 4), game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position.Z)
-	end
-end)
